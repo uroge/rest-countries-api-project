@@ -1,0 +1,226 @@
+
+$darkModeElements: hsl(209, 23%, 22%);
+$darkModeBackground: hsl(207, 26%, 17%);
+$lightModeText: hsl(200, 15%, 8%);
+$lightModeInput: hsl(0, 0%, 52%);
+$lightModeBackground: hsl(0, 0%, 98%);
+$darkTextWhiteElements: hsl(0, 0%, 100%);
+
+$breakpoint-mobile: 375px;
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: $lightModeBackground;
+}
+
+
+// DARK MODE
+@mixin setDarkModeElement() {
+    background: $darkModeElements;
+    color: $darkTextWhiteElements;
+}
+
+@mixin setDarkModeBody() {
+    background: $darkModeBackground;
+    color: $darkTextWhiteElements;
+}
+
+.dark-element {
+    @include setDarkModeElement();
+}
+
+.dark-body {
+    @include setDarkModeBody();
+}
+// END OF DARK MODE
+
+// LIGHT MODE
+@mixin setLightModeElement() {
+    background: $darkTextWhiteElements;
+    color: $lightModeText;
+}
+
+@mixin setLightModeBody() {
+    background: $lightModeBackground;
+    color: $lightModeText;
+}
+
+.light-element {
+    @include setLightModeElement();
+}
+
+.light-body {
+    @include setLightModeBody();
+}
+// END OF LIGHT MODE
+
+// HEADER
+.header {
+    padding: 1rem 2.8rem;
+    a{
+        color: $darkTextWhiteElements;
+        transition: all 0.4s ease-in-out;
+    }
+    a:hover {
+        color: $lightModeInput;
+        text-decoration: none;
+    }
+    a:focus {
+        outline: 0!important;
+        outline: none!important;
+        box-shadow: none!important;
+    }
+    .moon-icon {
+        font-size: 0.8rem;
+        transform: rotate(-20deg);
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .header {
+    padding: 1rem 0rem;
+    h4 {
+       font-size: 0.9rem;
+    }
+    a {
+        font-size: 0.9rem;
+    }
+    .moon-icon {
+        font-size: 0.7rem;
+    }
+  }
+}
+// END OF HEADER
+
+// SEARCH AND FILTER
+.search {
+    padding: 2rem 2.8rem;
+    .input-group {
+        width: 65%;
+    }
+    input {
+        padding: 1.5rem 2rem;
+        border: 0px;
+        height: 3rem;
+    }
+    input::placeholder {
+        font-size: 0.9rem;
+        color: $darkTextWhiteElements!important;
+    }
+    input:focus {
+        outline: 0!important;
+        outline: none!important;
+        box-shadow: none!important;
+        @include setDarkModeElement();
+        color: $darkTextWhiteElements;
+    }
+    .search-icon-container {
+        border: 0px;
+        width: 2.6rem;
+        padding-left: 1.5rem;
+    }
+    .dropdown-button {
+        width: 10.841rem;
+        font-size: 0.8rem;
+        padding-left: 1.4rem;
+        height: 3rem;
+        outline: 0!important;
+        outline: none!important;
+        box-shadow: none!important;
+    }
+    .dropdown-button:hover {
+        color: $lightModeInput;
+    }
+    .dropdown-menu {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+    .dropdown-item {
+        color: $darkTextWhiteElements;
+    }
+    .dropdown-item:hover {
+        background: transparent;
+        color: $lightModeInput;
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .search {
+        padding: 2rem 0rem;
+        .input-group {
+            width: 100%;
+        }
+        input {
+            padding: 1.5rem 2rem;
+            border: 0px;
+            height: 3rem;
+        }
+        .dropdown-button {
+            width: 100%;
+        }
+        .dropdown-menu {
+            width: 100%;
+            font-size: 0.8rem;
+        }
+        .dropdown-col {
+            justify-content: start!important;
+            margin-top: 2rem;
+        }
+    }
+}
+// END OF SEARCH AND FILTER
+
+// COUNTRIES
+.countries {
+    padding: 2rem 2.8rem;
+    .single-country {
+        border: transparent;
+        width: 18rem;
+        margin-bottom: 3.8rem;
+    }
+    .country {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .card-paragraph {
+        font-size: 0.9rem;
+    }
+    .single-counry-info {
+        height: 11rem;
+    }
+    .card-img-top {
+        height: 11rem;
+    }
+    
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .countries {
+        padding: 2rem 2.8rem;
+        .single-country {
+            border: none;
+            width: 20rem;
+            margin-bottom: 3.8rem;
+        }
+    }
+}
+// END OF COUNTRIES
+
+// COUNTRY PAGE
+.search {
+    .back-btn {
+        border: none;
+        box-shadow: none;
+        width: 7rem;
+    }
+    .back-btn:focus {
+        outline: 0!important;
+        outline: none!important;
+        box-shadow: none!important;
+    }
+}
+.country-information {
+    padding: 2rem 2.8rem;
+    
+}
+// END OF COUNTRY PAGE

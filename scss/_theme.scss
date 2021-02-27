@@ -1,0 +1,39 @@
+// DARK MODE
+@mixin setDarkModeElement() {
+    background: $darkModeElements;
+    color: $darkTextWhiteElements;
+}
+
+@mixin setDarkModeBody() {
+    background: $darkModeBackground;
+    color: $darkTextWhiteElements;
+}
+
+.dark-element {
+    @include setDarkModeElement();
+}
+
+.dark-body {
+    @include setDarkModeBody();
+}
+// END OF DARK MODE
+
+// LIGHT MODE
+@mixin setLightModeElement() {
+    background: $darkTextWhiteElements;
+    color: $lightModeText;
+}
+
+@mixin setLightModeBody() {
+    background: $lightModeBackground;
+    color: $lightModeText;
+}
+
+.light-element {
+    @include setLightModeElement();
+}
+
+.light-body {
+    @include setLightModeBody();
+}
+// END OF LIGHT MODE
