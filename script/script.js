@@ -3,6 +3,27 @@ const themeBtn = document.querySelector('.theme-btn');
 const darkElements = document.querySelectorAll('.dark-element');
 let myStorage = window.localStorage;
 
+themeBtn.addEventListener('click', () => {
+    const body = document.querySelector('body');
+    const header = document.querySelector('.header');
+    const searchInput = document.querySelector('.js-search');
+    const searchIcon = document.querySelector('.search-icon-container');
+    body.classList.toggle('dark-body');
+    body.classList.toggle('light-body')
+    header.classList.toggle('dark-element');
+    header.classList.toggle('light-element');
+    header.querySelector('a').classList.toggle('light-text');
+    header.querySelector('a').classList.toggle('dark-text');
+    searchInput.classList.toggle('dark-element');
+    searchInput.classList.toggle('light-element');
+    searchIcon.classList.toggle('dark-element');
+    searchIcon.classList.toggle('light-element');
+    const card = document.querySelectorAll('.card-body');
+    card.forEach(c => {
+        c.classList.toggle('dark-element');
+        c.classList.toggle('light-element');
+    })
+});
 
 function sendHttpRequest(method, url, data) {
     return fetch(url).then(response => {

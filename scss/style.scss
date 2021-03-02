@@ -25,6 +25,15 @@ body {
     color: $darkTextWhiteElements;
 }
 
+@mixin datkText() {
+    color: $darkTextWhiteElements;
+    transition: all 0.4s ease-in-out;
+}
+
+.dark-text {
+    @include datkText();
+}
+
 .dark-element {
     @include setDarkModeElement();
 }
@@ -32,6 +41,8 @@ body {
 .dark-body {
     @include setDarkModeBody();
 }
+
+
 // END OF DARK MODE
 
 // LIGHT MODE
@@ -43,6 +54,15 @@ body {
 @mixin setLightModeBody() {
     background: $lightModeBackground;
     color: $lightModeText;
+}
+
+@mixin lightText() {
+    color: $lightModeText;
+    transition: all 0.4s ease-in-out;
+}
+
+.light-text {
+    @include lightText();
 }
 
 .light-element {
@@ -57,9 +77,10 @@ body {
 // HEADER
 .header {
     padding: 1rem 2.8rem;
+    box-shadow: 0px 0px 2px 0.2px #4d4a4a;
     a{
-        color: $darkTextWhiteElements;
-        transition: all 0.4s ease-in-out;
+        // color: $darkTextWhiteElements;
+        // transition: all 0.4s ease-in-out;
     }
     a:hover {
         color: $lightModeInput;
@@ -102,6 +123,8 @@ body {
         padding: 1.5rem 2rem;
         border: 0px;
         height: 3rem;
+        border: 1px solid $darkModeBackground;
+        border-left: none;
     }
     input::placeholder {
         font-size: 0.9rem;
@@ -112,10 +135,10 @@ body {
         outline: none!important;
         box-shadow: none!important;
         @include setDarkModeElement();
-        color: $darkTextWhiteElements;
+        // color: $darkTextWhiteElements;
     }
     .search-icon-container {
-        border: 0px;
+        border: 1px solid $darkModeBackground;
         width: 2.6rem;
         padding-left: 1.5rem;
     }

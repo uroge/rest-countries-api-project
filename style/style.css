@@ -2,6 +2,10 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   background: #fafafa; }
 
+.dark-text {
+  color: white;
+  transition: all 0.4s ease-in-out; }
+
 .dark-element {
   background: #2b3945;
   color: white; }
@@ -9,6 +13,10 @@ body {
 .dark-body {
   background: #202c37;
   color: white; }
+
+.light-text {
+  color: #111517;
+  transition: all 0.4s ease-in-out; }
 
 .light-element {
   background: white;
@@ -19,10 +27,8 @@ body {
   color: #111517; }
 
 .header {
-  padding: 1rem 2.8rem; }
-  .header a {
-    color: white;
-    transition: all 0.4s ease-in-out; }
+  padding: 1rem 2.8rem;
+  box-shadow: 0px 0px 2px 0.2px #4d4a4a; }
   .header a:hover {
     color: #858585;
     text-decoration: none; }
@@ -51,7 +57,9 @@ body {
   .search input {
     padding: 1.5rem 2rem;
     border: 0px;
-    height: 3rem; }
+    height: 3rem;
+    border: 1px solid #202c37;
+    border-left: none; }
   .search input::placeholder {
     font-size: 0.9rem;
     color: white !important; }
@@ -60,10 +68,9 @@ body {
     outline: none !important;
     box-shadow: none !important;
     background: #2b3945;
-    color: white;
     color: white; }
   .search .search-icon-container {
-    border: 0px;
+    border: 1px solid #202c37;
     width: 2.6rem;
     padding-left: 1.5rem; }
   .search .dropdown-button {
