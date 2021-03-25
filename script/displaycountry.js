@@ -3,7 +3,15 @@ const backBtn = document.querySelector('.back-btn');
 backBtn.addEventListener('click', () => {
     localStorage.clear();
     window.location.href = './index.html';
-})
+});
+
+document.querySelector('.theme-btn').addEventListener('click', () => {
+    const backBtn = document.querySelector('.back-btn');
+    backBtn.classList.toggle('dark-element');
+    backBtn.classList.toggle('light-element');
+    console.log(backBtn);
+});
+
 
 const showCountryInfo = () => {
     countryInfo.innerHTML = `

@@ -1,6 +1,6 @@
 const country = document.querySelector('.country');
 const themeBtn = document.querySelector('.theme-btn');
-const darkElements = document.querySelectorAll('.dark-element');
+
 let myStorage = window.localStorage;
 
 themeBtn.addEventListener('click', () => {
@@ -8,6 +8,9 @@ themeBtn.addEventListener('click', () => {
     const header = document.querySelector('.header');
     const searchInput = document.querySelector('.js-search');
     const searchIcon = document.querySelector('.search-icon-container');
+    const dropdownBtn = document.querySelector('.dropdown-button');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    const dropdownItem = document.querySelectorAll('.dropdown-item');
     body.classList.toggle('dark-body');
     body.classList.toggle('light-body')
     header.classList.toggle('dark-element');
@@ -18,6 +21,17 @@ themeBtn.addEventListener('click', () => {
     searchInput.classList.toggle('light-element');
     searchIcon.classList.toggle('dark-element');
     searchIcon.classList.toggle('light-element');
+    dropdownBtn.classList.toggle('dark-element');
+    dropdownBtn.classList.toggle('light-element');
+    dropdownMenu.classList.toggle('dark-element');
+    dropdownMenu.classList.toggle('light-element');
+    
+    dropdownItem.forEach(dropItem => {
+        dropItem.classList.toggle('dark-element');
+        dropItem.classList.toggle('light-element');
+        dropItem.classList.toggle('light-text');
+        dropItem.classList.toggle('dark-text');
+    });
     const card = document.querySelectorAll('.card-body');
     card.forEach(c => {
         c.classList.toggle('dark-element');
@@ -38,7 +52,6 @@ async function fetchPosts(link) {
       'POST',
       url
     );
-    console.log(responseData);
     return responseData;
 }
 
@@ -48,7 +61,7 @@ const renderCountries = (data) => {
     newCountry.classList.add('single-country');
     
     newCountry.innerHTML = `
-        <a href="#" id="singleCountryInfo"><img class="card-img-top" src=${data.flag} alt="${data.name} img"></a>
+        <a href="#" id="singleCountryInfo"><img class="card-img-top flag-img" src=${data.flag} alt="${data.name} img"></a>
         <div class="card-body single-counry-info dark-element">
             <h5 class="card-title">${data.name}</h5>
             <p class="card-text mb-0">Population: <span class="card-paragraph">${data.population}</span></p>
